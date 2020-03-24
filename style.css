@@ -8,4 +8,9 @@ h3 {
     color: black;
 
 }
-
+#search-history {
+    width: 70px;
+}
+.card-header{
+    height: 50 px;
+}
