@@ -10,9 +10,9 @@ function renderSearchHistory() {
         $("#search-history").append(button);
     }
 }
-$(button).on("click",function(){
+// $(button).on("click",function(){
 
-})
+// })
 
 
 $("#searchButton").on("click", function () {
@@ -44,7 +44,7 @@ $("#searchButton").on("click", function () {
         $(".card").empty();
         
         
-        var todayHeader = $("<div>").attr("class", "card-header")
+        var todayCard = $("<div>").attr("class", "card-body");
         var cityName = response.city.name;
         var nameDisplay = $("<h2>").text(cityName);
         var currentDay = moment().format("(" + "MM/DD/YYYY" + ")");
@@ -54,12 +54,10 @@ $("#searchButton").on("click", function () {
         var iconURL = "https://openweathermap.org/img/wn/" + iconID + "@2x.png";
         var iconImg = $("<img>").attr("src", iconURL);
 
-        $(todayHeader).append(nameDisplay)
-        $(todayHeader).append(dayDisplay)
-        $(todayHeader).append(iconImg)
-        $("#todaysWeather").append(todayHeader)
+        $(todayCard).append(nameDisplay)
+        $(todayCard).append(dayDisplay)
+        $(todayCard).append(iconImg)
         
-        var todayCard = $("<div>").attr("class", "card-body");
         var cityTemp = Math.round((response.list["0"].main.temp * 9 / 5) - 459.67);
         var tempDisplay = $("<p>").text("Temperature: " + cityTemp + "°F");
         todayCard.append(tempDisplay);
